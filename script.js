@@ -5,15 +5,15 @@ for (let i = 0; i < 10; i++) {
     const humanChoice = getHumanChoice();
     const computerChoice = getComputerChoice();
     const result = playRound(humanChoice, computerChoice);
-    
+    if (result === "You win!") humanScore++;
+    if (result === "You lose!") computerScore++;
+
     console.log("You chose: " + humanChoice);
     console.log("Computer chose: " + computerChoice);
     console.log(result);
 
-    if (result === "You win!") humanScore++;
-    if (result === "You lose!") computerScore++;
     console.log("Current score - You: " + humanScore + " Computer: " + computerScore);
-    if (result === "You win!") humanScore++;
+
 }
    
 
