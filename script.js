@@ -13,12 +13,12 @@ function scoreGame() {
     }
 
 function getLeader() {
-    if (humanScore > computerScore) {
-        return ("Human leads!")
+    if (humanScore === computerScore) {
+        return (" Tie!")
     } else if (computerScore > humanScore) {
         return ("Computer leads!")
     } else {
-        return ("It's a tie!")
+        return ("Human leads!")
     }
 }
     for (let i = 0; i < 5; i++) {
@@ -27,6 +27,7 @@ function getLeader() {
         console.log("You chose: " + humanChoice);
         console.log("Computer chose: " + computerChoice);
         console.log(playRound(humanChoice, computerChoice));
+        console.log("Score: Human " + humanScore + " - Computer " + computerScore);
         console.log(getLeader());
     }
 
