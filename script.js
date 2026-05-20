@@ -1,4 +1,34 @@
 console.log("Hello World");
+        let humanScore = 0;
+        let computerScore = 0;
+function scoregame() {
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
+        const result = playRound(humanChoice, computerChoice);
+        if (result === "You win!") {
+            humanScore++;
+        } else if (result === "You lose!") {
+            computerScore++;
+        }
+    }
+
+function getLeader() {
+    if (humanScore > computerScore) {
+        return ("Human leads!")
+    } else if (computerScore > humanScore) {
+        return ("Computer leads!")
+    } else {
+        return ("It's a tie!")
+    }
+}
+    for (let i = 0; i < 5; i++) {
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+        console.log("You chose: " + humanChoice);
+        console.log("Computer chose: " + computerChoice);
+        console.log(playRound(humanChoice, computerChoice));
+    }
+
 
 function getComputerChoice() {
     const choice = ["rock", "paper", "scissors"];
@@ -14,10 +44,6 @@ function getHumanChoice() {
         return getHumanChoice();
     }
 }
-
-let humanScore = 0;
-let computerScore = 0;
-
 function playRound( humanChoice, computerChoice) {
     if (computerChoice === "rock") {
     if (humanChoice === "rock") {
@@ -47,31 +73,3 @@ function playRound( humanChoice, computerChoice) {
         }
     }
 }
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
-console.log ( "You chose: " + humanChoice);
-console.log ( "Computer chose: " + computerChoice);
-console.log (playRound(humanChoice, computerChoice));
-
-function scoregame() {
-    let decider = (playRound(humanChoice, computerChoice));
-    if (decider === "You win!") {
-        humanScore++;
-    } else if (decider === "You lose!") {
-        computerScore++;
-    }
-        console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);
-}
-function getLeader() {
-    if (humanScore > computerScore) {
-        return ("Human leads!")
-    } else if (computerScore > humanScore) {
-        return ("Computer leads!")
-    } else {
-        return ("It's a tie!")
-    }
-}
-scoregame();
-console.log(getLeader());
-
