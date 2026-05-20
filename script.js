@@ -1,14 +1,14 @@
 console.log("Hello World");
         let humanScore = 0;
         let computerScore = 0;
-function scoregame() {
+function scoreGame() {
         const humanChoice = getHumanChoice();
         const computerChoice = getComputerChoice();
         const result = playRound(humanChoice, computerChoice);
         if (result === "You win!") {
-            humanScore++;
+            (humanScore++);
         } else if (result === "You lose!") {
-            computerScore++;
+            (computerScore++);
         }
     }
 
@@ -27,6 +27,7 @@ function getLeader() {
         console.log("You chose: " + humanChoice);
         console.log("Computer chose: " + computerChoice);
         console.log(playRound(humanChoice, computerChoice));
+        console.log(getLeader());
     }
 
 
